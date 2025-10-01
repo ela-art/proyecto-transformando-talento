@@ -1,0 +1,161 @@
+Diccionario de datos
+1.Age → Edad del empleado (igual DROP)
+o	Convertir a int 
+o	Sin nulos
+2.	
+Attrition → Indica si dejó la empresa (Yes/No)
+o	Columna completa
+o	Mantener
+3.	
+BusinessTravel → Frecuencia de viajes laborales
+o	Categorías: Travel_Rarely, Travel_Frequently, Non-Travel
+o	Rellenar nulos con "Unknown"
+o	Mantener para análisis de Attrition
+
+4.DailyRate → Tarifa diaria (estimada) (se borró)
+o	Tipo float
+o	Redondear a 2 decimales
+o	Sin nulos
+5.	
+Department → Departamento (se borró)
+o	Drop
+6.	
+DistanceFromHome → Distancia al trabajo (km)
+o	Tipo int
+o	Revisar valores negativos (error de carga)
+o	Sin nulos
+7.	
+Education → Nivel educativo (1–5)
+o	Tipo int
+o	Escala: 1 bajo – 5 alto
+o	Sin nulos
+8.	
+EducationField → Campo de estudio
+o	Tipo object
+o	Rellenar nulos con la moda "Life Sciences"
+9.	
+EmployeeCount → Constante (1) (se borró)
+o	Drop
+10.	EmployeeNumber → ID empleado
+•	Revisar duplicados
+•	Puede servir como ID
+11.	
+EnvironmentSatisfaction → Satisfacción con el ambiente (1–4) *******+
+•	Tipo int
+•	Corregir valores erróneos (49 → 4, etc.)
+•	Sin nulos
+12.	
+Gender → Género
+•	Normalizar a M/F o 0/1 (0 = Male, 1 = Female)
+•	Sin nulos
+13.HourlyRate → Tarifa por hora (DailyRate/8) (se borró)
+•	Drop (derivada y con nulos)
+14.
+JobInvolvement → Compromiso en el trabajo (1–4)
+•	Tipo int
+•	Sin nulos
+15.	
+JobLevel → Nivel jerárquico (1–5)
+•	Tipo int
+•	Sin nulos
+16.	
+JobRole → Rol específico**
+•	Tipo object
+•	Normalizar (.str.lower().str.strip())
+•	Sin nulos
+17.
+JobSatisfaction → Satisfacción en el puesto (1–4)
+•	Tipo int
+•	Sin nulos
+18.	
+MaritalStatus → Estado civil
+•	Tipo object
+•	Rellenar nulos si necesario
+•	Normalizar con .str.title()
+19.	
+MonthlyIncome → Ingreso mensual (se borró)
+•	Tipo float
+•	468 nulos
+•	
+20.MonthlyRate → Tarifa mensual (se borró)
+•	Revisar relevancia (mantener de momento)
+21.	
+NumCompaniesWorked → Número de empresas anteriores
+•	Tipo int
+•	Renombrar num_empresas_anteriores
+22.	
+Over18 → Mayor de edad (se borró)
+•	Drop
+23.	
+OverTime → Horas extra (Yes/No)
+•	Convertir a bool (True/False)
+•	Renombrar horas_extra
+24.	
+PercentSalaryHike → Incremento salarial (%)
+•	Tipo int
+•	Renombrar incremento_salario
+25.	
+PerformanceRating → nivel de trabajo
+•	Tipo int
+•	Renombrar nivel_trabajo
+26.	
+RelationshipSatisfaction → Satisfacción relaciones interpersonales (1–4)
+•	Tipo int
+•	Renombrar satisfaccion_relaciones_interpersonales
+•	No hay nulos
+27.	
+StandardHours → Tipo de jornada (Full/Part Time)
+•	Tipo object
+•	Rellenar nulos con "Full Time"
+•	Renombrar calificacion_jornada
+28.	
+StockOptionLevel → Opciones sobre acciones (se borró)
+•	Drop
+29.	TotalWorkingYears → Años de experiencia total
+•	Tipo int
+•	Renombrar años_experiencia
+30.	
+TrainingTimesLastYear → Sesiones de entrenamiento último año
+•	Tipo int
+•	Renombrar sesiones_entrenamiento_ultimo_año
+31.	
+WorkLifeBalance → Balance vida/trabajo (1–4)
+•	Tipo int
+•	Renombrar balance_vida_trabajo
+32.	
+YearsAtCompany → Años en la empresa
+•	Tipo int
+•	Renombrar años_compañia
+33.	
+YearsInCurrentRole → Años en el rol actual (se borró)
+•	Tipo int
+•	Renombrar años_mismo_puesto
+•	Muchos nulos (revisar si mantener o dropear)
+34.	
+YearsSinceLastPromotion → Años desde última promoción
+•	Tipo int
+•	Mantener
+35.	
+YearsWithCurrManager → Años con mismo manager
+•	Tipo int
+•	Mantener
+36.	
+DateBirth → Año nacimiento (Se borró)
+•	Drop (ya está Age)
+37.	
+Salary → Salario anual
+•	Tipo float
+•	Limpiar símbolo $ con .str.replace()
+38.	
+RoleDepartament → Combinación rol/departamento (se borró)
+•	Muchos nulos → revisar
+•	O bien normalizar (.str.lower()) o Drop
+39.	
+NumberChildren → Número de hijos (se borró)
+•	Drop (sin datos)
+40.	
+RemoteWork → Teletrabajo (Yes/No)
+•	Convertir a bool
+•	Renombrar remotework
+SalaryMonth Añadido.
+
